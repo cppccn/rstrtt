@@ -1,5 +1,9 @@
 import * as React from 'react'
 import { HTML } from '../components'
+import FormContainer from '../components/forms/form'
+import InputTextArea from '../components/forms/input-area'
+import InputSet from '../components/forms/input-set'
+import InputText from '../components/forms/input-text'
 
 const code = `.form-group.form-success
 .form-group.form-error
@@ -36,46 +40,27 @@ const code2 = `<form class="form">
 function Form () {
   return <div>
     <h4>Form</h4>
-      <form className="form">
-        <fieldset className="form-group">
-          <label htmlFor="username">USERNAME:</label>
-          <input
-            id="username"
-            type="text"
-            placeholder="type your name..."
-            className="form-control"
-          />
-        </fieldset>
-        <fieldset className="form-group">
-          <label htmlFor="email">EMAIL:</label>
-          <input
-            id="email"
-            type="email"
-            placeholder=""
-            className="form-control"
-          />
-        </fieldset>
-        <fieldset className="form-group">
-          <label htmlFor="country">COUNTRY:</label>
-          <select id="country" className="form-control">
-            <option>China</option>
-            <option>U.S.</option>
-            <option>U.K.</option>
-            <option>Japan</option>
-          </select>
-        </fieldset>
-        <fieldset className="form-group form-textarea">
-          <label
-            htmlFor="message">
-              MESSAGE:
-          </label>
-          <textarea
-            id="message"
-            rows={5}
-            className="form-control"
-            >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam placeat ratione nisi assumenda quo saepe quasi iste temporibus asperiores. Soluta cupiditate quam at reprehenderit facere. Asperiores nulla rerum earum pariatur.</textarea>
-        </fieldset>
+      <FormContainer>
+        <InputText
+          id='username'
+          label='USERNAME:'
+          placeholder='type your name...'
+        />
+        <InputText
+          id='email'
+          label='EMAIL:'
+          placeholder='type your email...'
+        />
+        <InputSet
+          id='country2'
+          label='COUNTRY:'
+          options={ ['China', 'U.S.', 'France', 'Italy'] }
+        />
+        <InputTextArea
+          id='message'
+          label='MESSAGE:'
+          placeholder='type your message...'
+        />
         <div className="form-actions">
           <button
             type="button"
@@ -83,33 +68,36 @@ function Form () {
               Submit
           </button>
         </div>
-      </form>
+      </FormContainer>
       <HTML data={ code2 } />
       <h5>Stateful Form</h5>
-      <form className="form">
-        <fieldset className="form-group form-success">
-          <label htmlFor="username2">USERNAME:</label>
-          <input
-            id="username2"
-            type="text"
-            placeholder="type your name..."
-            className="form-control"
-            />
-        </fieldset>
-        <fieldset
-          className="form-group form-warning"
-          >
-          <label htmlFor="age">
-            AGE:
-          </label>
-          <input
-            id="age"
-            type="text"
-            placeholder=""
-            className="form-control"
-            />
-        </fieldset>
-      </form>
+      <FormContainer>
+      <InputText
+          id='username2'
+          label='USERNAME:'
+          placeholder='type your name...'
+          success
+        />
+        <InputText
+          id='email2'
+          label='EMAIL:'
+          placeholder='type your email...'
+          warning
+        />
+        <InputSet
+          id='country2'
+          label='COUNTRY:'
+          options={ ['China', 'U.S.', 'France', 'Italy'] }
+          error
+        />
+        <div className="form-actions">
+          <button
+            type="button"
+            className="btn btn-primary btn-block">
+              Submit
+          </button>
+        </div>
+      </FormContainer>
       <HTML data={ code } />
     </div>
 }
