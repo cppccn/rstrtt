@@ -3,8 +3,8 @@
   "plugins": [
     ["prismjs", {
       "languages": ["javascript", "css", "html"],
-      "plugins": ["line-numbers", "show-language"],
-      "theme": "okaidia",
+      "plugins": ["line-numbers"],
+      "theme": "default",
       "css": true
     }]
   ]
