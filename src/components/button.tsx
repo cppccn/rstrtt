@@ -3,23 +3,25 @@
 import * as React from 'react'
 import '../css/rstrtt.css'
 
-const Button = props => {
-  const { type } = props
-  switch (type) {
-    case "primary": return <div className="btn btn-primary">Primary</div>
-    case "success": return <div className="btn btn-success">Success</div>
-    case "info": return <div className="btn btn-info">Info</div>
-    case "warning": return <div className="btn btn-warning">Warning</div>
-    case "error": return <div className="btn btn-error">Error</div>
-    case "block": return <div className="btn btn-primary btn-block">Block Level Button</div>
-    case "btn-ghost": return <div className="btn btn-default btn-ghost">Default Ghost</div>
-    case "primary-ghost": return <div className="btn btn-primary btn-ghost">Primary Ghost</div>
-    case "success-ghost": return <div className="btn btn-success btn-ghost">Success Ghost</div>
-    case "info-ghost": return <div className="btn btn-info btn-ghost">Info Ghost</div>
-    case "warning-ghost": return <div className="btn btn-warning btn-ghost">Warning Ghost</div>
-    case "error-ghost": return <div className="btn btn-error btn-ghost">Error Ghost</div>
-    default: return <div className="btn btn-default">Default</div>
-  }
+const classNames = {
+  primary: 'btn btn-primary',
+  success: 'btn btn-success',
+  info: 'btn btn-info',
+  warning: 'btn btn-warning',
+  error: 'btn btn-error',
+  block: 'btn btn-primary btn-block',
+  'btn-ghost': 'btn btn-default btn-ghost',
+  'primary-ghost': 'btn btn-primary btn-ghost',
+  'success-ghost': 'btn btn-success btn-ghost',
+  'info-ghost': 'btn btn-info btn-ghost',
+  'warning-ghost': 'btn btn-warning btn-ghost',
+  'error-ghost': 'btn btn-error btn-ghost',
+  default: 'btn btn-defaul'
+}
+
+const Button = (props: { type: string; value: string; onClick: any }) => {
+  const { type, value, onClick } = props
+  return <div className={classNames[type]} onClick={onClick}>{value}</div>
 }
 
 export default Button

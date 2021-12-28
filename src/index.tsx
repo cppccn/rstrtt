@@ -62,23 +62,23 @@ ReactDOM.render(
     <br />
     <h2> Buttons</h2>
     <p>
-      <Button />
-      <Button type="primary"/>
-      <Button type="success"/>
-      <Button type="info"/>
-      <Button type="warning"/>
-      <Button type="error"/>
+      {/* <Button /> */}
+      <Button type="primary"value="primary" onClick={() => { console.log('clicked') }}/>
+      <Button type="success"value="success" onClick={() => { console.log('clicked') }}/>
+      <Button type="info"value="info" onClick={() => { console.log('clicked') }}/>
+      <Button type="warning"value="warning" onClick={() => { console.log('clicked') }}/>
+      <Button type="error"value="error" onClick={() => { console.log('clicked') }}/>
     </p>
     <p>
-      <Button type="btn-ghost" />
-      <Button type="primary-ghost" />
-      <Button type="success-ghost" />
-      <Button type="info-ghost" />
-      <Button type="warning-ghost" />
-      <Button type="error-ghost" />
+      <Button type="btn-ghost" value="btn-ghost" onClick={() => { console.log('clicked') }}/>
+      <Button type="primary-ghost" value="primary-ghost" onClick={() => { console.log('clicked') }}/>
+      <Button type="success-ghost" value="success-ghost" onClick={() => { console.log('clicked') }}/>
+      <Button type="info-ghost" value="info-ghost" onClick={() => { console.log('clicked') }}/>
+      <Button type="warning-ghost" value="warning-ghost" onClick={() => { console.log('clicked') }}/>
+      <Button type="error-ghost" value="error-ghost" onClick={() => { console.log('clicked') }}/>
     </p>
     <p>
-      <Button type="block" />
+      <Button type="block" value="block" onClick={() => { console.log('clicked') }}/>
     </p>
     {/* TODO: add code */}
     {/* <pre>
