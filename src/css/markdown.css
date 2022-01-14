@@ -1,177 +1,199 @@
-/**
- * code by https://github.com/mrcoles/markdown-css
- * with some modifications
- */
-
-.rstrtt,
-.rstrtt h1,
-.rstrtt h2,
-.rstrtt h3,
-.rstrtt h4,
-.rstrtt h5,
-.rstrtt h6,
-.rstrtt code,
-.rstrtt blockquote,
-.rstrtt em,
-.rstrtt strong,
-.rstrtt code {
-  margin: 0;
-  font-family: "Fira Code", "Jetbrains Mono";
-  font-feature-settings: "calt" 1; /* Enable ligatures for IE 10+, Edge */
-  text-rendering: optimizeLegibility; /* Force ligatures for Webkit, Blink, Gecko */
+.markdown {
+  word-wrap: break-word;
 }
-.rstrtt h1 { font-size: 3rem; }
-.rstrtt h2 { font-size: 2rem; }
-.rstrtt h3 { font-size: 1.8rem; }
-.rstrtt h4 { font-size: 1.6rem; }
-.rstrtt h5 { font-size: 1.4rem; }
-.rstrtt h6 { font-size: 1.2rem; }
-.rstrtt,
-.rstrtt code,
-.rstrtt blockquote,
-.rstrtt em,
-.rstrtt strong,
-.rstrtt code {
-  font-size: 1rem;
-}
-.rstrtt,
-.rstrtt h1,
-.rstrtt h2,
-.rstrtt h3,
-.rstrtt h4,
-.rstrtt h5,
-.rstrtt h6,
-.rstrtt code,
-.rstrtt blockquote,
-.rstrtt code {
-  font-style: normal;
-}
-.rstrtt code,
-.rstrtt blockquote,
-.rstrtt em,
-.rstrtt strong,
-.rstrtt code {
+.markdown,
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6,
+.markdown pre,
+.markdown code,
+.markdown blockquote,
+.markdown em,
+.markdown strong,
+.markdown code {
+  font-size: 14px;
   line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-family: consolas, monaco, courier, "courier new", monospace;
+  color: #333333;
 }
-.rstrtt h1,
-.rstrtt h2,
-.rstrtt h3,
-.rstrtt h4,
-.rstrtt h5,
-.rstrtt h6,
-.rstrtt code,
-.rstrtt blockquote,
-.rstrtt ol,
-.rstrtt ul,
-.rstrtt li,
-.rstrtt p,
-.rstrtt section,
-.rstrtt header,
-.rstrtt footer {
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6,
+.markdown pre,
+.markdown code,
+.markdown blockquote,
+.markdown ol,
+.markdown ul,
+.markdown li,
+.markdown p,
+.markdown section,
+.markdown header,
+.markdown footer {
   float: none;
   margin: 0;
   padding: 0;
 }
-.rstrtt h1,
-.rstrtt p,
-.rstrtt ul,
-.rstrtt ol,
-.rstrtt blockquote {
+.markdown h1,
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown pre,
+.markdown blockquote {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.rstrtt h1,
-.rstrtt h2,
-.rstrtt h3,
-.rstrtt h4,
-.rstrtt h5,
-.rstrtt h6 {
+.markdown h1 {
   position: relative;
-  margin-bottom: 1.75rem;
+  display: inline-block;
+  display: table-cell;
+  padding: 20px 0 40px;
+  margin: 0;
+  overflow: hidden;
 }
-.rstrtt h1:before,
-.rstrtt h2:before,
-.rstrtt h3:before,
-.rstrtt h4:before,
-.rstrtt h5:before,
-.rstrtt h6:before {
-  display: inline;
-  color: $light-grey;
+.markdown h1:after {
+  content: "====================================================================================================";
+  position: absolute;
+  bottom: 20px;
+  left: 0;
 }
-.rstrtt h1:before {
-  content: "# ";
+.markdown h1 + * {
+  margin-top: 0;
 }
-.rstrtt h2:before {
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  position: relative;
+  margin-bottom: 20px;
+}
+.markdown h2:before,
+.markdown h3:before,
+.markdown h4:before,
+.markdown h5:before,
+.markdown h6:before {
   content: "## ";
+  display: inline;
 }
-.rstrtt h3:before {
+.markdown h3:before {
   content: "### ";
 }
-.rstrtt h4:before {
+.markdown h4:before {
   content: "#### ";
 }
-.rstrtt h5:before {
+.markdown h5:before {
   content: "##### ";
 }
-.rstrtt h6:before {
+.markdown h6:before {
   content: "###### ";
 }
-.rstrtt li {
+.markdown li {
   position: relative;
   display: block;
-  padding-left: 20px;
+  padding-left: 34px;
+  padding-left: 4ch;
 }
-.rstrtt li:after {
+.markdown li:after {
   position: absolute;
   top: 0;
   left: 0;
 }
-.rstrtt ul > li:after {
-  content: "-";
+.markdown ul > li:after {
+  content: "*";
 }
-.rstrtt ol {
+.markdown ol {
   counter-reset: ol;
 }
-.rstrtt ol > li:after {
+.markdown ol > li:after {
   content: counter(ol) ".";
   counter-increment: ol;
 }
-.rstrtt ol li:nth-child(n+10):after {
-  left: -7px;
+.markdown pre {
+  margin-left: 34px;
+  margin-left: 4ch;
 }
-.rstrtt em:before,
-.rstrtt em:after {
-  content: "_";
+.markdown blockquote {
+  position: relative;
+  padding-left: 17px;
+  padding-left: 2ch;
+  overflow: hidden;
+}
+.markdown blockquote:after {
+  content: ">\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>";
+  white-space: pre;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+.markdown strong:before,
+.markdown strong:after {
+  content: "__";
   display: inline;
-  color: $light-grey;
 }
-.rstrtt strong:before,
-.rstrtt strong:after {
-  content: "**";
+.markdown em:before,
+.markdown em:after {
+  content: "*";
   display: inline;
-  color: $light-grey;
 }
-.rstrtt pre code:before,
-.rstrtt pre code:after {
-  content: '';
+.markdown a {
+  text-decoration: none;
 }
-.rstrtt code {
-  font-weight: 700;
+.markdown a:before {
+  content: "[";
+  display: inline;
+  color: #333333;
 }
-.rstrtt code:before,
-.rstrtt code:after {
+.markdown a:after {
+  content: "](" attr(href) ")";
+  display: inline;
+  color: #333333;
+}
+.markdown code {
+  font-weight: 100;
+}
+.markdown code:before,
+.markdown code:after {
   content: "`";
   display: inline;
-  color: $light-grey;
 }
-.rstrtt hr {
-  border: 0.1rem solid black;
+.markdown pre code:before,
+.markdown pre code:after {
+  content: none;
+}
+.markdown hr {
+  position: relative;
+  height: 20px;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+  border: 0;
+  margin-bottom: 20px;
+}
+.markdown hr:after {
+  content: "----------------------------------------------------------------------------------------------------";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  line-height: 20px;
+  width: 100%;
+  word-wrap: break-word;
 }
 @-moz-document url-prefix() {
-  .rstrtt h1 {
+  .markdown h1 {
     display: block;
   }
 }
-.rstrtt-ones ol > li:after {
+.markdown-ones ol > li:after {
   content: "1.";
 }
