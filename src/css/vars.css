@@ -1,13 +1,13 @@
 /**
  * vars
  */
-$light-grey: rgba(95, 95, 95, 0.78);
+$light-grey: rgba(0, 0, 0, 0.1);
 $dark-grey-bg: #181818;
 $solarized-dark-color-bg: #073642;
 
-$red:    hsl(  0, 80%, 60%);
-$yellow: hsl( 60, 80%, 60%);
-$green:  hsl(120, 80%, 60%);
-$cyan:   hsl(180, 80%, 60%);
+$red: hsl(0, 80%, 60%);
+$yellow: hsl(60, 80%, 60%);
+$green: hsl(120, 80%, 60%);
+$cyan: hsl(180, 80%, 60%);
 $purple: hsl(240, 80%, 60%);
-$pink:   hsl(300, 80%, 60%);
+$pink: hsl(300, 80%, 60%);
