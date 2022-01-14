@@ -2,7 +2,5 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "csstools.postcss",
-    "eamodio.gitlens",
-    "donjayamanne.githistory"
   ]
 }
