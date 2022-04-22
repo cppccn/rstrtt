@@ -1,38 +1,5 @@
-/**
- * code by https://github.com/mrcoles/markdown-css
- * with some modifications
- */
-
-.rstrtt,
-.rstrtt h1,
-.rstrtt h2,
-.rstrtt h3,
-.rstrtt h4,
-.rstrtt h5,
-.rstrtt h6,
-.rstrtt code,
-.rstrtt blockquote,
-.rstrtt em,
-.rstrtt strong,
-.rstrtt code {
-  margin: 0;
-  font-family: "Fira Code", "Jetbrains Mono";
-  font-feature-settings: "calt" 1; /* Enable ligatures for IE 10+, Edge */
-  text-rendering: optimizeLegibility; /* Force ligatures for Webkit, Blink, Gecko */
-}
-.rstrtt h1 { font-size: 3rem; }
-.rstrtt h2 { font-size: 2rem; }
-.rstrtt h3 { font-size: 1.8rem; }
-.rstrtt h4 { font-size: 1.6rem; }
-.rstrtt h5 { font-size: 1.4rem; }
-.rstrtt h6 { font-size: 1.2rem; }
-.rstrtt,
-.rstrtt code,
-.rstrtt blockquote,
-.rstrtt em,
-.rstrtt strong,
-.rstrtt code {
-  font-size: 1rem;
+.rstrtt {
+  word-wrap: break-word;
 }
 .rstrtt,
 .rstrtt h1,
@@ -41,17 +8,18 @@
 .rstrtt h4,
 .rstrtt h5,
 .rstrtt h6,
-.rstrtt code,
-.rstrtt blockquote,
-.rstrtt code {
-  font-style: normal;
-}
+.rstrtt pre,
 .rstrtt code,
 .rstrtt blockquote,
 .rstrtt em,
 .rstrtt strong,
 .rstrtt code {
+  font-size: 14px;
   line-height: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-family: consolas, monaco, courier, "courier new", monospace;
+  color: #333333;
 }
 .rstrtt h1,
 .rstrtt h2,
@@ -59,6 +27,7 @@
 .rstrtt h4,
 .rstrtt h5,
 .rstrtt h6,
+.rstrtt pre,
 .rstrtt code,
 .rstrtt blockquote,
 .rstrtt ol,
@@ -76,33 +45,43 @@
 .rstrtt p,
 .rstrtt ul,
 .rstrtt ol,
+.rstrtt pre,
 .rstrtt blockquote {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.rstrtt h1,
+.rstrtt h1 {
+  position: relative;
+  display: inline-block;
+  display: table-cell;
+  padding: 20px 0 40px;
+  margin: 0;
+  overflow: hidden;
+}
+.rstrtt h1:after {
+  content: "====================================================================================================";
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+}
+.rstrtt h1 + * {
+  margin-top: 0;
+}
 .rstrtt h2,
 .rstrtt h3,
 .rstrtt h4,
 .rstrtt h5,
 .rstrtt h6 {
   position: relative;
-  margin-bottom: 1.75rem;
+  margin-bottom: 20px;
 }
-.rstrtt h1:before,
 .rstrtt h2:before,
 .rstrtt h3:before,
 .rstrtt h4:before,
 .rstrtt h5:before,
 .rstrtt h6:before {
-  display: inline;
-  color: $light-grey;
-}
-.rstrtt h1:before {
-  content: "# ";
-}
-.rstrtt h2:before {
   content: "## ";
+  display: inline;
 }
 .rstrtt h3:before {
   content: "### ";
@@ -119,7 +98,8 @@
 .rstrtt li {
   position: relative;
   display: block;
-  padding-left: 20px;
+  padding-left: 34px;
+  padding-left: 4ch;
 }
 .rstrtt li:after {
   position: absolute;
@@ -127,7 +107,7 @@
   left: 0;
 }
 .rstrtt ul > li:after {
-  content: "-";
+  content: "*";
 }
 .rstrtt ol {
   counter-reset: ol;
@@ -136,36 +116,78 @@
   content: counter(ol) ".";
   counter-increment: ol;
 }
-.rstrtt ol li:nth-child(n+10):after {
-  left: -7px;
+.rstrtt pre {
+  margin-left: 34px;
+  margin-left: 4ch;
 }
-.rstrtt em:before,
-.rstrtt em:after {
-  content: "_";
-  display: inline;
-  color: $light-grey;
+.rstrtt blockquote {
+  position: relative;
+  padding-left: 17px;
+  padding-left: 2ch;
+  overflow: hidden;
+}
+.rstrtt blockquote:after {
+  content: ">\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>";
+  white-space: pre;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  line-height: 20px;
 }
 .rstrtt strong:before,
 .rstrtt strong:after {
-  content: "**";
+  content: "__";
   display: inline;
-  color: $light-grey;
 }
-.rstrtt pre code:before,
-.rstrtt pre code:after {
-  content: '';
+.rstrtt em:before,
+.rstrtt em:after {
+  content: "*";
+  display: inline;
+}
+.rstrtt a {
+  text-decoration: none;
+}
+.rstrtt a:before {
+  content: "[";
+  display: inline;
+  color: #333333;
+}
+.rstrtt a:after {
+  content: "](" attr(href) ")";
+  display: inline;
+  color: #333333;
 }
 .rstrtt code {
-  font-weight: 700;
+  font-weight: 100;
 }
 .rstrtt code:before,
 .rstrtt code:after {
   content: "`";
   display: inline;
-  color: $light-grey;
+}
+.rstrtt pre code:before,
+.rstrtt pre code:after {
+  content: none;
 }
 .rstrtt hr {
-  border: 0.1rem solid black;
+  position: relative;
+  height: 20px;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+  border: 0;
+  margin-bottom: 20px;
+}
+.rstrtt hr:after {
+  content: "----------------------------------------------------------------------------------------------------";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  line-height: 20px;
+  width: 100%;
+  word-wrap: break-word;
 }
 @-moz-document url-prefix() {
   .rstrtt h1 {
