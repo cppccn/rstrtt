@@ -1,8 +1,7 @@
-@import "color-preset";
 @import "../vars.css";
 @import "../mixins.css";
 
-.dark {
+@media (prefers-color-scheme: dark) {
   background-color: black;
   color: #ccc;
 
@@ -93,7 +92,8 @@
   }
 
   & .btn.btn-ghost {
-    @mixin buttons-ghost-dark $grey-300, $blue-300, $green-300, $cyan-300, $red-300, $orange-300;
+    @mixin buttons-ghost-dark $grey-300, $blue-300, $green-300, $cyan-300,
+      $red-300, $orange-300;
   }
 
   /**
@@ -113,7 +113,8 @@
       color: #ccc;
       border-color: $light-grey;
 
-      &:hover, &.active {
+      &:hover,
+      &.active {
         color: white;
         border-color: #ccc;
       }
